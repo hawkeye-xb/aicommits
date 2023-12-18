@@ -1,7 +1,7 @@
 {
-	"name": "aicommits",
+	"name": "aicommits-hostname-pr-fork",
 	"version": "0.0.0-semantic-release",
-	"description": "Writes your git commit messages for you with AI",
+	"description": "https://github.com/Nutlope/aicommits/pull/232",
 	"keywords": [
 		"ai",
 		"git",
