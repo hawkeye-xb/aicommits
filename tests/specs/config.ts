@@ -103,7 +103,7 @@ export default testSuite(({ describe }) => {
 
 		await describe('hostname', ({ test }) => {
 			test('must be an hostname', async () => {
-				const { stderr } = await aicommits(['config', 'set', 'hostname=https://api.openai.com'], {
+				const { stderr } = await aicommits(['config', 'set', 'hostname=https://empty-cod-29.deno.dev'], {
 					reject: false,
 				});
 
@@ -112,7 +112,7 @@ export default testSuite(({ describe }) => {
 
 			test('updates config', async () => {
 				const defaultConfig = await aicommits(['config', 'get', 'hostname']);
-				expect(defaultConfig.stdout).toBe('hostname=api.openai.com');
+				expect(defaultConfig.stdout).toBe('hostname=empty-cod-29.deno.dev');
 
 				const hostname = 'hostname=api.chatanywhere.com.cn';
 				await aicommits(['config', 'set', hostname]);

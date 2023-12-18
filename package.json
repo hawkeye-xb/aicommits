@@ -8,8 +8,8 @@
 		"commit"
 	],
 	"license": "MIT",
-	"repository": "Nutlope/aicommits",
-	"author": "Hassan El Mghari (@nutlope)",
+	"repository": "hawkeye-xb/aicommits",
+	"author": "lizhaowen",
 	"type": "module",
 	"files": [
 		"dist"
