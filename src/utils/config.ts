@@ -66,7 +66,7 @@ const configParsers = {
 	},
 	proxy(url?: string) {
 		if (!url || url.length === 0) {
-			return undefined;
+			return '';
 		}
 
 		parseAssert('proxy', /^https?:\/\//.test(url), 'Must be a valid URL');
@@ -152,7 +152,9 @@ export const getConfig = async (
 		if (suppressErrors) {
 			try {
 				parsedConfig[key] = parser(value);
-			} catch {}
+			} catch (error) {
+				console.warn('parsedConfig[key] = parser(value) error:', error);
+			}
 		} else {
 			parsedConfig[key] = parser(value);
 		}
@@ -171,6 +173,7 @@ export const setConfigs = async (
 			throw new KnownError(`Invalid config property: ${key}`);
 		}
 
+		// reset proxy= will set undefined string
 		const parsed = configParsers[key as ConfigKeys](value);
 		config[key as ConfigKeys] = parsed as any;
 	}
